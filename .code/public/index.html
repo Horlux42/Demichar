@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>DemiChar — Главная</title>
+    <style>
+        :root {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #484642;
+            background: #f7f5f2;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #f7f5f2;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0 24px;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: center;
+            max-width: 1260px;
+            width: 100%;
+        }
+
+        .hero-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .hero-copy h1 {
+            margin: 0;
+            font-size: clamp(3rem, 4vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #6E5847, #B8A2EB);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-copy p {
+            margin: 0;
+            max-width: 42rem;
+            font-size: 1.2rem;
+            line-height: 1.65;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #6E5847;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #8a725d;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #484642;
+            border: 2px solid #BCB9B5;
+        }
+
+        .btn-secondary:hover {
+            border-color: #8f8a84;
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .device-frame {
+            width: min(100%, 826px);
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 24px;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            background: linear-gradient(145deg, #faf8f5, #f0ede8);
+        }
+
+        .app-preview {
+            width: 100%;
+            aspect-ratio: 826 / 537;
+            background: #e9e7e5;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05), 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .app-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        @media (max-width: 960px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .hero-visual { order: -1; }
+        }
+
+        @media (max-width: 640px) {
+            .hero { padding: 32px 16px; }
+            .hero-copy h1 { font-size: 2.8rem; }
+            .hero-actions { flex-direction: column; align-items: stretch; }
+            .btn { width: 100%; min-width: 0; }
+        }
+    </style>
+</head>
+<body>
+<main class="hero">
+    <section class="hero-inner">
+        <div class="hero-copy">
+            <div>
+                <h1>DEMICHAR</h1>
+                <p>Мультивселенная ваших персонажей в одном приложении!</p>
+            </div>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="login.html">Вход</a>
+                <a class="btn btn-secondary" href="registration.html">Регистрация</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="device-frame">
+                <div class="app-preview">
+                    <!-- 👇 ВСТАВЬ СЮДА ПУТЬ К СВОЕЙ КАРТИНКЕ 👇 -->
+                    <img src="/assets/images/preview_pic.png" alt="DemiChar preview">
+                    <!-- Если картинки нет, покажется белый фон -->
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
