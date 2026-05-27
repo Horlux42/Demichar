@@ -4,6 +4,12 @@ require_once __DIR__ . '/helpers.php';
 
 header('Content-Type: application/json');
 
+// Проверка авторизации через JWT
+if (!isAuthenticated()) {
+    echo json_encode(['success' => false, 'error' => 'unauthorized']);
+    exit;
+}
+
 if (!isset($_SESSION['user']['id'])) {
     echo json_encode(['success' => false, 'error' => 'unauthorized']);
     exit;

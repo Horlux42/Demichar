@@ -2,6 +2,9 @@
 session_start();
 require_once __DIR__ . '/src/helpers.php';
 
+// Проверка авторизации через JWT
+requireAuth();
+
 // Проверка авторизации
 if (!isset($_SESSION['user']['id'])) {
     header("Location: /");
